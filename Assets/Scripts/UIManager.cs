@@ -28,5 +28,5 @@ public class UIManager : MonoBehaviour
 
     private void ActivateARPosition(){}
 
-    
+   
 }
