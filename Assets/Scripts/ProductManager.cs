@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ProductManager : MonoBehaviour
 {
     private RotateBox selectedProduct;
 
-    [SerializeField]
-    private TextMeshPro text;
+    public event Action OnselectProduct;
+
+    public static ProductManager instance;
+
+   [SerializeField]
+    private TMP_InputField nameInput;
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +27,18 @@ public class ProductManager : MonoBehaviour
     {
         
     }
-    /*
-    private selectedProduct()
+    
+    public void selectProduct()
     {
-        RotateBox[] products = GameObject.FindGameObjectsWithTag("Product");
+        OnselectProduct?.Invoke();
+        GameObject[] products = GameObject.FindGameObjectsWithTag("Product");
 
-        foreach(RotateBox product in products){
+        /*
+        foreach(GameObject product in products){
             if (product.RotateMe)
             {
                 selectedProduct = product;
             }
-        }
-    }*/
+        }*/
+    }
 }

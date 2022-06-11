@@ -41,6 +41,10 @@ public class RotateBox : MonoBehaviour
     public void ChangeBool()
     {
         RotateMe = !RotateMe;
-        text.SetText("Hola Mundo");
+    }
+
+    public void SetText(string textInput)
+    {
+        text.SetText(textInput);
     }
 }
