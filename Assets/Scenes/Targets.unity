@@ -1123,7 +1123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 644566292}
+  - {fileID: 1766930781}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1281,6 +1281,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5944160460552536095, guid: 5b97d361cb9884f1a9d868177276c7e9,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160460552536095, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160460552536095, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160460552536095, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1322,7 +1337,7 @@ PrefabInstance:
     - target: {fileID: 5944160460552536095, guid: 5b97d361cb9884f1a9d868177276c7e9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 292.05
+      value: 398
       objectReference: {fileID: 0}
     - target: {fileID: 5944160460552536095, guid: 5b97d361cb9884f1a9d868177276c7e9,
         type: 3}
@@ -1368,6 +1383,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461036987301, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461036987301, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461036987301, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461036987301, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461036987301, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 340.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461036987301, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461036987322, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461314050328, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_Spacing.x
+      value: -37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461314050328, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_Spacing.y
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461314050328, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944160461314050328, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_CellSize.y
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 5944160461314050335, guid: 5b97d361cb9884f1a9d868177276c7e9,
         type: 3}
@@ -1564,6 +1634,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5944160462415618788, guid: 5b97d361cb9884f1a9d868177276c7e9,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5944160462526588735, guid: 5b97d361cb9884f1a9d868177276c7e9,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1617,37 +1692,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 592709347}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &644566292
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Target1Material
-
-    31406'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a7b710b9aea338e47b696a4d694b0260, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &717026982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3614,6 +3658,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756573046}
   m_CullTransparentMesh: 1
+--- !u!21 &1766930781
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Target1Material
+
+    51678'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a7b710b9aea338e47b696a4d694b0260, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1773203767
 GameObject:
   m_ObjectHideFlags: 0
