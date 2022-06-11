@@ -7,13 +7,12 @@ public class TouchBox   : MonoBehaviour
 
 {
 
-    private PlacementObject[] placedObjects;
-
     [SerializeField]
     private Color activeColor = Color.red;
 
     [SerializeField]
     private Color inactiveColor = Color.gray;
+    private RotateBox selectedProduct;
 
 
     // Update is called once per frame
@@ -27,34 +26,45 @@ public class TouchBox   : MonoBehaviour
             RaycastHit hitObject;
             if (Physics.Raycast(ray, out hitObject))
             {
+                GameObject[] products = GameObject.FindGameObjectsWithTag("Product");
+                /*
+                foreach (GameObject product in products)
+                {
+                    RotateBox p1 = product.GetComponent<RotateBox>();
+                    if (product.RotateMe)
+                    {
+                        selectedProduct = product;
+                    }
+                }
+                */
                 Debug.Log("Touchh");
                 Debug.Log(hitObject.transform.tag);
-                if (hitObject.transform.tag == "Box")
+                if (hitObject.transform.tag == "Product")
                 {
-                    Debug.Log("if passed");
-                    hitObject.collider.GetComponent<MeshRenderer>().material.color = Color.red;
-                    hitObject.collider.GetComponent<RotateBox>().ChangeBool();
+
+                    if (!GameObject.ReferenceEquals(hitObject.collider.GetComponent<RotateBox>(), selectedProduct))
+                    {
+                        if (selectedProduct != null)
+                        {
+                            selectedProduct.GetComponent<MeshRenderer>().material.color = Color.cyan;
+                            selectedProduct.ChangeBool();
+                        }
+
+                        selectedProduct = hitObject.collider.GetComponent<RotateBox>();
+                        Debug.Log("if passed");
+                        hitObject.collider.GetComponent<MeshRenderer>().material.color = Color.red;
+                        hitObject.collider.GetComponent<RotateBox>().ChangeBool();
+
+                    }
+
+                    
+
+
                 }
             }
 
         }
     }
 
-    private void ChangeSelectedObject(PlacementObject selected)
-    {
-        foreach (PlacementObject current in placedObjects)
-        {
-            MeshRenderer meshRenderer = current.GetComponent<MeshRenderer>();
-            if(selected != current)
-            {
-                current.IsSelected = false;
-                meshRenderer.material.color = inactiveColor;
-            }
-            else
-            {
-                current.IsSelected = true;
-                meshRenderer.material.color = activeColor;
-            }
-        }
-    }
+  
 }
