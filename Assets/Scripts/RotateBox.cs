@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RotateBox : MonoBehaviour
@@ -8,6 +9,9 @@ public class RotateBox : MonoBehaviour
     float ySpeed = 0.0f;
     float zSpeed = 0.0f;
     public bool RotateMe = false;
+
+    [SerializeField]
+    private TextMeshPro text;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +41,6 @@ public class RotateBox : MonoBehaviour
     public void ChangeBool()
     {
         RotateMe = !RotateMe;
+        text.SetText("Hola Mundo");
     }
 }
