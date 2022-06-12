@@ -22,6 +22,10 @@ public class RotateBox : MonoBehaviour
     private DateTime expiration = DateTime.Now;
     public string DateFormat = "dd-MM-yyyy";
 
+    public int idProduct;
+
+    public ProductModel productModel = new ProductModel();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +61,7 @@ public class RotateBox : MonoBehaviour
     public void SetText(string textInput)
     {
         nameText.SetText(textInput);
+        productModel.name = textInput;
     }
 
     public void SetExpirationDate(DateTime expirationDate)
@@ -64,6 +69,7 @@ public class RotateBox : MonoBehaviour
         dateText.SetText(expirationDate.ToString(DateFormat));
         expiration = expirationDate;
         this.GetComponent<MeshRenderer>().material.color = state();
+        productModel.expirationDate = expirationDate;
     }
 
     public void SetDefaultColor()

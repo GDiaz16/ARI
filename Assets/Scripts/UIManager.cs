@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class UIManager : MonoBehaviour
         GameManager.instance.OnItemsMenu += ActivateItemsMenu;
         GameManager.instance.OnARPosition += ActivateARPosition;
 
+        // Cargar datos del juego
 
     }
 
@@ -67,6 +70,23 @@ public class UIManager : MonoBehaviour
         {
             return true;
         }
+    }
+
+    public void Save()
+    {
+        DbModel data = new DbModel();
+        GameObject[] products = GameObject.FindGameObjectsWithTag("Product");
+        foreach (GameObject product in products)
+        {
+            ProductModel productModel = product.GetComponent<RotateBox>().productModel;
+            data.products.Add(productModel);
+        }
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+        Debug.Log(Application.persistentDataPath + "/gamesave.save");
+        bf.Serialize(file, data);
+        file.Close();
     }
 
    
