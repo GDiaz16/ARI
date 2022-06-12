@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Main menu activated");
     }
 
-    public void ItemsMenu()
+    public void EditExpiration()
     {
         OnItemsMenu?.Invoke();
         Debug.Log("Items menu activated");

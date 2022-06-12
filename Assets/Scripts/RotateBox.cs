@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,15 +14,22 @@ public class RotateBox : MonoBehaviour
     [SerializeField]
     private TextMeshPro text;
 
+    [SerializeField]
+    private TextMeshPro dateText;
+
+    private DateTime expiration = DateTime.Now;
+    public string DateFormat = "dd-MM-yyyy";
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.GetComponent<MeshRenderer>().material.color = state();
+        SetExpirationDate(expiration);
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         if (RotateMe)
         {
             ySpeed = 40;
@@ -35,7 +43,7 @@ public class RotateBox : MonoBehaviour
             xSpeed * Time.deltaTime,
             ySpeed * Time.deltaTime,
             zSpeed * Time.deltaTime
-            );
+            );*/
     }
 
     public void ChangeBool()
@@ -46,5 +54,39 @@ public class RotateBox : MonoBehaviour
     public void SetText(string textInput)
     {
         text.SetText(textInput);
+    }
+
+    public void SetExpirationDate(DateTime expirationDate)
+    {
+       dateText.SetText(expirationDate.ToString(DateFormat));
+       this.GetComponent<MeshRenderer>().material.color = state();
+
+    }
+
+    public void SetDefaultColor()
+    {
+        this.GetComponent<MeshRenderer>().material.color = state();
+    }
+    public Color state()
+    {
+        TimeSpan remainderDays = expiration.Subtract(DateTime.Now);
+        if (remainderDays.Days < 1)
+        {
+            return Color.red;
+        }
+        else if (remainderDays.Days >= 1 && remainderDays.Days < 4)
+        {
+            return new Color(1.0f, 0.505f, 0.121f);
+        }
+        else if (remainderDays.Days >= 4 && remainderDays.Days < 10)
+        {
+            return Color.yellow;
+        }
+        else
+        {
+            return Color.green;
+        }
+
+
     }
 }

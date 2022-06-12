@@ -33,6 +33,7 @@ public class DatePicker : MonoBehaviour {
             m_SelectedDate = value;
             if(m_SelectedDate != null){
                 SelectedDateText.text = ((DateTime)m_SelectedDate).ToString(DateFormat);
+                Debug.Log(((DateTime)m_SelectedDate).ToString(DateFormat));
             }else{
                 SelectedDateText.text = string.Empty;
             }

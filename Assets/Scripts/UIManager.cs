@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject itemsMenuCanvas;
     [SerializeField] private GameObject ARPositionCanvas;
 
+    [SerializeField]
+    private GameObject datePicker;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,12 @@ public class UIManager : MonoBehaviour
     }
 
     private void ActivateARPosition(){}
+
+
+    public void ToggleCalendar()
+    {
+        datePicker.SetActive(!datePicker.activeSelf);
+    }
 
    
 }
