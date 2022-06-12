@@ -31,6 +31,7 @@ public class RotateBox : MonoBehaviour
     {
         this.GetComponent<MeshRenderer>().material.color = state();
         SetExpirationDate(expiration);
+        productModel.idProduct = idProduct;
 
     }
 
@@ -102,5 +103,19 @@ public class RotateBox : MonoBehaviour
         // Buscar el UIManager, tomar el name input y obtener el inputField
         nameInput = GameObject.FindWithTag("UIManager").GetComponent<UIManager>().nameInput.GetComponentInChildren<TMP_InputField>();
         nameInput.text = nameText.text;
+    }
+
+    public void SetModel(ProductModel productModel)
+    {
+        // Cargar el nuevo modelo
+        this.productModel = productModel;
+        // Settear el texto del modelo
+        nameText.SetText(this.productModel.name);
+        // Settear la fecha de expiracion en el render
+        dateText.SetText(productModel.expirationDate.ToString(DateFormat));
+        // Asignar la nueva fecha
+        expiration = productModel.expirationDate;
+        // Actualizar color
+        this.GetComponent<MeshRenderer>().material.color = state();
     }
 }

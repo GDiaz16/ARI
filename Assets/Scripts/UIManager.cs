@@ -19,6 +19,11 @@ public class UIManager : MonoBehaviour
     public GameObject nameInput;
     private RotateBox selectedProduct;
 
+    DbModel data = new DbModel();
+
+    [SerializeField]
+    private GameObject saveText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +32,31 @@ public class UIManager : MonoBehaviour
         GameManager.instance.OnARPosition += ActivateARPosition;
 
         // Cargar datos del juego
+        if(File.Exists(Application.persistentDataPath + "/gamesave.save"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
+            data = (DbModel)bf.Deserialize(file);
+            file.Close();
 
+            GameObject[] products = GameObject.FindGameObjectsWithTag("Product");
+            //RotateBox[] rotateBoxes = new RotateBox[products.Length];
+            // Para cada producto en data, buscar el correspondiente en los rotate box
+            for (int i = 0; i < data.products.Count; i++)
+            {
+                foreach(GameObject product in products)
+                {
+                    // Comparar id de db con id de escena
+                    if (product.GetComponent<RotateBox>().idProduct == data.products[i].idProduct)
+                    {
+                        product.GetComponent<RotateBox>().SetModel(data.products[i]);
+                    }
+                }
+                
+            }
+
+
+        }
     }
 
     private void ActivateMainMenu(){
@@ -74,7 +103,6 @@ public class UIManager : MonoBehaviour
 
     public void Save()
     {
-        DbModel data = new DbModel();
         GameObject[] products = GameObject.FindGameObjectsWithTag("Product");
         foreach (GameObject product in products)
         {
@@ -87,6 +115,18 @@ public class UIManager : MonoBehaviour
         Debug.Log(Application.persistentDataPath + "/gamesave.save");
         bf.Serialize(file, data);
         file.Close();
+
+        StartCoroutine(waiter());
+    }
+
+
+    IEnumerator waiter()
+    {
+        saveText.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        saveText.SetActive(false);
     }
 
    
