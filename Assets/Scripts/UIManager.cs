@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     private GameObject datePicker;
 
     [SerializeField]
-    private GameObject nameInput;
+    public GameObject nameInput;
     private RotateBox selectedProduct;
 
     // Start is called before the first frame update
@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
     public void ToggleInputName()
     { 
         nameInput.SetActive(!nameInput.activeSelf);
+
     }
 
    

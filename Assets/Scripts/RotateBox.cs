@@ -17,6 +17,8 @@ public class RotateBox : MonoBehaviour
     [SerializeField]
     private TextMeshPro dateText;
 
+    private TMP_InputField nameInput;
+
     private DateTime expiration = DateTime.Now;
     public string DateFormat = "dd-MM-yyyy";
 
@@ -25,6 +27,7 @@ public class RotateBox : MonoBehaviour
     {
         this.GetComponent<MeshRenderer>().material.color = state();
         SetExpirationDate(expiration);
+
     }
 
     // Update is called once per frame
@@ -90,9 +93,17 @@ public class RotateBox : MonoBehaviour
 
     public void UpdateNameInput()
     {
-        GameObject nameInput = GameObject.FindWithTag("NameInput");
-        Debug.Log(nameText.text);
+        // Buscar caja de texto de name
+        
 
-        nameInput.GetComponent<TMP_InputField>().text = nameText.text;
+        // Buscar el UIManager, tomar el name input y obtener el inputField
+        nameInput = GameObject.FindWithTag("UIManager").GetComponent<UIManager>().nameInput.GetComponentInChildren<TMP_InputField>();
+        Debug.Log(GameObject.FindWithTag("UIManager").GetComponent<UIManager>().nameInput.GetComponentInChildren<TMP_InputField>().text);
+        nameInput.text = nameText.text;
+
+        if (nameInput != null)
+        {
+            
+        }
     }
 }
