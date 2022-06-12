@@ -61,9 +61,9 @@ public class RotateBox : MonoBehaviour
 
     public void SetExpirationDate(DateTime expirationDate)
     {
-       dateText.SetText(expirationDate.ToString(DateFormat));
-       this.GetComponent<MeshRenderer>().material.color = state();
-
+        dateText.SetText(expirationDate.ToString(DateFormat));
+        expiration = expirationDate;
+        this.GetComponent<MeshRenderer>().material.color = state();
     }
 
     public void SetDefaultColor()
@@ -92,17 +92,9 @@ public class RotateBox : MonoBehaviour
     }
 
     public void UpdateNameInput()
-    {
-        // Buscar caja de texto de name
-        
-
+    {     
         // Buscar el UIManager, tomar el name input y obtener el inputField
         nameInput = GameObject.FindWithTag("UIManager").GetComponent<UIManager>().nameInput.GetComponentInChildren<TMP_InputField>();
         nameInput.text = nameText.text;
-
-        if (nameInput != null)
-        {
-            
-        }
     }
 }

@@ -25,6 +25,9 @@ public class DatePicker : MonoBehaviour {
     // Null so that it can be deselected(Yet to be implemented)
     private DateTime? m_SelectedDate;
 
+    private RotateBox selectedProduct;
+
+
     public DateTime? SelectedDate
     {
         get { return m_SelectedDate; }
@@ -34,6 +37,7 @@ public class DatePicker : MonoBehaviour {
             if(m_SelectedDate != null){
                 SelectedDateText.text = ((DateTime)m_SelectedDate).ToString(DateFormat);
                 Debug.Log(((DateTime)m_SelectedDate).ToString(DateFormat));
+                SetProductExpiration((DateTime)m_SelectedDate);
             }else{
                 SelectedDateText.text = string.Empty;
             }
@@ -51,7 +55,25 @@ public class DatePicker : MonoBehaviour {
         }
     }
 
+    public void SetProductExpiration(DateTime expiration)
+    {
+        GameObject[] products = GameObject.FindGameObjectsWithTag("Product");
+        foreach (GameObject product in products)
+        {
+            if (product.GetComponent<RotateBox>().RotateMe)
+            {
+                selectedProduct = product.GetComponent<RotateBox>();
+            }
+        }
+
+        if (selectedProduct != null)
+        {
+            selectedProduct.SetExpirationDate(expiration);
+        }
+    }
+
     public DayOfWeek startDayOfWeek;
+
     void Start()
     {
         GenerateDaysNames();

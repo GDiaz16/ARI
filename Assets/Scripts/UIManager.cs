@@ -40,12 +40,33 @@ public class UIManager : MonoBehaviour
     public void ToggleCalendar()
     {
         datePicker.SetActive(!datePicker.activeSelf);
+        if (nameInput.activeSelf)
+        {
+            nameInput.SetActive(!nameInput.activeSelf);
+        }
     }
 
     public void ToggleInputName()
     { 
         nameInput.SetActive(!nameInput.activeSelf);
+        if (datePicker.activeSelf)
+        {
+            datePicker.SetActive(!datePicker.activeSelf);
+        }
 
+    }
+
+    public bool canTouch()
+    {
+        if(nameInput.activeSelf || datePicker.activeSelf)
+        {
+            return false;
+
+        }
+        else
+        {
+            return true;
+        }
     }
 
    

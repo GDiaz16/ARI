@@ -14,11 +14,13 @@ public class TouchBox   : MonoBehaviour
     private Color inactiveColor = Color.gray;
     private RotateBox selectedProduct;
 
+    [SerializeField]
+    private UIManager uiManager;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && uiManager.canTouch())
         {
             
 
