@@ -98,7 +98,6 @@ public class RotateBox : MonoBehaviour
 
         // Buscar el UIManager, tomar el name input y obtener el inputField
         nameInput = GameObject.FindWithTag("UIManager").GetComponent<UIManager>().nameInput.GetComponentInChildren<TMP_InputField>();
-        Debug.Log(GameObject.FindWithTag("UIManager").GetComponent<UIManager>().nameInput.GetComponentInChildren<TMP_InputField>().text);
         nameInput.text = nameText.text;
 
         if (nameInput != null)
