@@ -12,7 +12,7 @@ public class RotateBox : MonoBehaviour
     public bool RotateMe = false;
 
     [SerializeField]
-    private TextMeshPro text;
+    private TextMeshPro nameText;
 
     [SerializeField]
     private TextMeshPro dateText;
@@ -53,7 +53,7 @@ public class RotateBox : MonoBehaviour
 
     public void SetText(string textInput)
     {
-        text.SetText(textInput);
+        nameText.SetText(textInput);
     }
 
     public void SetExpirationDate(DateTime expirationDate)
@@ -86,7 +86,13 @@ public class RotateBox : MonoBehaviour
         {
             return Color.green;
         }
+    }
 
+    public void UpdateNameInput()
+    {
+        GameObject nameInput = GameObject.FindWithTag("NameInput");
+        Debug.Log(nameText.text);
 
+        nameInput.GetComponent<TMP_InputField>().text = nameText.text;
     }
 }

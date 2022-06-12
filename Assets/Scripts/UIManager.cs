@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private GameObject datePicker;
+
+    [SerializeField]
+    private GameObject nameInput;
+    private RotateBox selectedProduct;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +40,11 @@ public class UIManager : MonoBehaviour
     public void ToggleCalendar()
     {
         datePicker.SetActive(!datePicker.activeSelf);
+    }
+
+    public void ToggleInputName()
+    { 
+        nameInput.SetActive(!nameInput.activeSelf);
     }
 
    

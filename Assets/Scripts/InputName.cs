@@ -15,6 +15,11 @@ public class InputName : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    public void OnEndEdit()
+    {
         GameObject[] products = GameObject.FindGameObjectsWithTag("Product");
         foreach (GameObject product in products)
         {
@@ -23,10 +28,8 @@ public class InputName : MonoBehaviour
                 selectedProduct = product.GetComponent<RotateBox>();
             }
         }
-    }
 
-    public void OnEndEdit()
-    {
+
         //Debug.Log(GetComponentInParent<TMP_InputField>().text);
         if (selectedProduct != null)
         {

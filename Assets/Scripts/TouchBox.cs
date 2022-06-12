@@ -41,7 +41,7 @@ public class TouchBox   : MonoBehaviour
                 Debug.Log(hitObject.transform.tag);
                 if (hitObject.transform.tag == "Product")
                 {
-
+                    // True si se selecciona una caja diferente a la actual
                     if (!GameObject.ReferenceEquals(hitObject.collider.GetComponent<RotateBox>(), selectedProduct))
                     {
                         // Cambiar el cubo anterior al color por defecto
@@ -54,7 +54,10 @@ public class TouchBox   : MonoBehaviour
                         // Cambiar el cubo seleccionado al nuevo color
                         selectedProduct = hitObject.collider.GetComponent<RotateBox>();
                         hitObject.collider.GetComponent<MeshRenderer>().material.color = Color.blue;
+                        // Asignar como activado
                         hitObject.collider.GetComponent<RotateBox>().ChangeBool();
+                        // Actualizar input
+                        hitObject.collider.GetComponent<RotateBox>().UpdateNameInput();
 
                     }
 

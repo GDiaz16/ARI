@@ -457,6 +457,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotateMe: 0
-  text: {fileID: 8129331331709237393}
+  nameText: {fileID: 8129331331709237393}
   dateText: {fileID: 3462150352810348983}
   DateFormat: dd-MM-yyyy
