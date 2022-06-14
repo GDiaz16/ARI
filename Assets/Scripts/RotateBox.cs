@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -33,7 +34,10 @@ public class RotateBox : MonoBehaviour
     void Start()
     {
         Debug.Log(DateTime.Now.AddDays(UnityEngine.Random.Range(0, 25)));
-        expiration = DateTime.Now.AddDays(UnityEngine.Random.Range(0, 30));
+        if (!File.Exists(Application.persistentDataPath + "/gamesave1.save"))
+        {
+            expiration = DateTime.Now.AddDays(UnityEngine.Random.Range(0, 30));
+        }
         this.GetComponent<MeshRenderer>().material.color = state();
         SetExpirationDate(expiration);
         productModel.idProduct = idProduct;
