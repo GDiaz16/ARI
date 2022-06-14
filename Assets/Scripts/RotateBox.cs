@@ -19,19 +19,25 @@ public class RotateBox : MonoBehaviour
 
     private TMP_InputField nameInput;
 
-    private DateTime expiration = DateTime.Now;
+    private DateTime expiration;// = DateTime.Now;
     public string DateFormat = "dd-MM-yyyy";
 
     public int idProduct;
 
     public ProductModel productModel = new ProductModel();
 
+    [SerializeField]
+    private string nameTextString;
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(DateTime.Now.AddDays(UnityEngine.Random.Range(0, 25)));
+        expiration = DateTime.Now.AddDays(UnityEngine.Random.Range(0, 30));
         this.GetComponent<MeshRenderer>().material.color = state();
         SetExpirationDate(expiration);
         productModel.idProduct = idProduct;
+        
 
     }
 

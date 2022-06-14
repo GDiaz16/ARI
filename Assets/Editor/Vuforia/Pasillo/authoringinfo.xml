@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="QCAR_Dataset_info.xsd">
+    <TargetSet version="3.4">
+        <AreaTarget version="5.0" bbox="-0.5597 -1.2149 -9.5672 13.5234 1.6154 -0.5580" targetId="8b83539a23fb4df697609a2e22b08f7e" name="Pasillo" pathAuthoring="8b83539a23fb4df697609a2e22b08f7e_authoring.glb" pathOcclusion="8b83539a23fb4df697609a2e22b08f7e_occlusion.3dt" pathNavMesh="8b83539a23fb4df697609a2e22b08f7e_navmesh.glb" />
+    </TargetSet>
+</QCARInfo>
