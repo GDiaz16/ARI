@@ -34,14 +34,15 @@ public class RotateBox : MonoBehaviour
     void Start()
     {
         Debug.Log(DateTime.Now.AddDays(UnityEngine.Random.Range(0, 25)));
-        if (!File.Exists(Application.persistentDataPath + "/gamesave1.save"))
+        if (!File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
             expiration = DateTime.Now.AddDays(UnityEngine.Random.Range(0, 30));
+            Debug.Log("File not exists!!!");
         }
         this.GetComponent<MeshRenderer>().material.color = state();
         SetExpirationDate(expiration);
         productModel.idProduct = idProduct;
-        
+        productModel.name = nameText.text;
 
     }
 

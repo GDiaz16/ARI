@@ -32,10 +32,12 @@ public class UIManager : MonoBehaviour
         GameManager.instance.OnARPosition += ActivateARPosition;
 
         // Cargar datos del juego
-        if(File.Exists(Application.persistentDataPath + "/gamesave1.save"))
+        if(File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
+            Debug.Log(Application.persistentDataPath + "/gamesave.save");
+
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/gamesave1.save", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
             data = (DbModel)bf.Deserialize(file);
             file.Close();
 
